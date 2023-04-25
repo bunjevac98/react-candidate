@@ -8,8 +8,6 @@ import MultipleSelector, { multipleSelectorModel } from "../Forms/MultipleSelect
 import { useState } from "react";
 import { skillDTO } from "../Skills/skills.model";
 
-
-
 export default function CandidateForm(props: candidateFormProps) {
   const [selectedSkills, setSelectedSkills] = useState(mapToModel(props.selectedSkills));
   const [nonSelectedSkills, setNonSelectedSkills] = useState(mapToModel(props.nonSelectedSkills));
@@ -19,6 +17,9 @@ function mapToModel(items:{id:number,skillName:string}[]):multipleSelectorModel[
       return {key:items.id,value:items.skillName}
   })
 }
+
+
+
 
   return (
     <Formik
